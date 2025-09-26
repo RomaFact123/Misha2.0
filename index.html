@@ -2,85 +2,150 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>С Днём Рождения, Миша Луговой!</title>
+  <title>Сайт про Мишу Лугового 🎉</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(to top right, #dfffd6, #fff8e7);
+      background: linear-gradient(to top right, #e6ffe6, #fff0f5);
       text-align: center;
       margin: 0;
       padding: 0;
     }
     header {
-      background: #7fc97f;
+      background: #4caf50;
       color: white;
-      padding: 30px;
+      padding: 20px;
       font-size: 2em;
     }
-    .content {
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
       padding: 20px;
     }
     .gallery img {
-      width: 200px;
-      margin: 10px;
-      border-radius: 10px;
+      width: 100%;
+      border-radius: 12px;
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .caption {
+      margin-top: 5px;
+      font-weight: bold;
     }
     footer {
-      background: #7fc97f;
+      background: #4caf50;
       color: white;
       padding: 15px;
       margin-top: 20px;
     }
-    .balloon {
-      position: absolute;
-      bottom: -150px;
-      width: 60px;
-      animation: rise 8s infinite;
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
     }
-    @keyframes rise {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-120vh); }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.5);
+    }
+    .lightbox:target {
+      display: flex;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      font-size: 40px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
   <header>
-    🎉 С Днём Рождения, Миша Луговой! 🎂
+    🎂 С Днём Рождения, Миша Луговой! 🎉
   </header>
 
-  <div class="content">
-    <h2>О нашем имениннике</h2>
-    <p>Миша Луговой — добрый и жизнерадостный мышь, который живёт в зелёных полях и любит свежую травку. Сегодня мы отмечаем его день рождения!</p>
-
-    <h2>Интересные факты</h2>
-    <ul style="list-style:none;">
-      <li>🌱 Луговые мыши — отличные прыгунчики.</li>
-      <li>🐭 Они любят строить гнёзда из травы.</li>
-      <li>💚 Настоящие хранители луговой экосистемы.</li>
-    </ul>
-
-    <h2>Галерея</h2>
-    <div class="gallery">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Field_mouse.jpg" alt="Луговой мышь">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Apodemus_sylvaticus_field_mouse.jpg" alt="Мышь">
+  <h2>Галерея Миши</h2>
+  <div class="gallery">
+    <div>
+      <a href="#img6"><img src="6.jpg" alt="Фото 6"></a>
+      <div class="caption">Фото 6</div>
+    </div>
+    <div>
+      <a href="#img7"><img src="7.jpg" alt="Фото 7"></a>
+      <div class="caption">Фото 7</div>
+    </div>
+    <div>
+      <a href="#img8"><img src="8.jpg" alt="Фото 8"></a>
+      <div class="caption">Фото 8</div>
+    </div>
+    <div>
+      <a href="#img9"><img src="9.jpg" alt="Фото 9"></a>
+      <div class="caption">Фото 9</div>
+    </div>
+    <div>
+      <a href="#img10"><img src="10.jpg" alt="Фото 10"></a>
+      <div class="caption">Фото 10</div>
+    </div>
+    <div>
+      <a href="#img11"><img src="11.jpg" alt="Фото 11"></a>
+      <div class="caption">Фото 11</div>
+    </div>
+    <div>
+      <a href="#img12"><img src="12.jpg" alt="Фото 12"></a>
+      <div class="caption">Фото 12</div>
     </div>
   </div>
 
-  <footer>
-    С любовью и поздравлениями 💌 для Миши Лугового
-  </footer>
+  <!-- Lightbox windows -->
+  <div id="img6" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="6.jpg" alt="Фото 6">
+  </div>
+  <div id="img7" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="7.jpg" alt="Фото 7">
+  </div>
+  <div id="img8" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="8.jpg" alt="Фото 8">
+  </div>
+  <div id="img9" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="9.jpg" alt="Фото 9">
+  </div>
+  <div id="img10" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="10.jpg" alt="Фото 10">
+  </div>
+  <div id="img11" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="11.jpg" alt="Фото 11">
+  </div>
+  <div id="img12" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="12.jpg" alt="Фото 12">
+  </div>
 
-  <script>
-    // Добавляем воздушные шарики 🎈
-    for (let i = 0; i < 10; i++) {
-      let balloon = document.createElement("img");
-      balloon.src = "https://upload.wikimedia.org/wikipedia/commons/3/3c/Red_balloon_icon.png";
-      balloon.className = "balloon";
-      balloon.style.left = Math.random() * 100 + "vw";
-      balloon.style.animationDuration = (5 + Math.random()*5) + "s";
-      document.body.appendChild(balloon);
-    }
-  </script>
+  <footer>
+    С любовью и уважением 💚
+  </footer>
 </body>
 </html>
